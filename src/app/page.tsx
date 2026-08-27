@@ -1,7 +1,50 @@
 import CalculatorHub from './calculator-hub';
 
+const structuredData={
+ '@context':'https://schema.org',
+ '@graph':[
+    {
+     '@type':'WebSite',
+     '@id':'https://hustletimecalculator.com/#website',
+     name:'Hustle Time Calculator',
+     url:'https://hustletimecalculator.com/',
+     description:'Free time calculators for work hours, time cards, overtime pay, time duration, business days and percent change.',
+    },
+    {
+     '@type':'WebApplication',
+     '@id':'https://hustletimecalculator.com/#application',
+     name:'Hustle Time Calculator',
+     url:'https://hustletimecalculator.com/',
+     description:'Free, private calculators for work hours, time cards, overtime pay, time duration, business days and percent change.',
+     applicationCategory:'BusinessApplication',
+     operatingSystem:'Web browser',
+     image:'https://hustletimecalculator.com/logo.svg',
+     featureList:[
+        'Time Card Calculator',
+        'Work Hours Calculator',
+        'Overtime Pay Calculator',
+        'Time Duration Calculator',
+        'Business Days Calculator',
+        'Percent Change Calculator',
+     ],
+    },
+    {
+     '@type':'ItemList',
+     '@id':'https://hustletimecalculator.com/#calculators',
+     name:'Hustle Time Calculator tools',
+     itemListElement:['Time Card Calculator','Work Hours Calculator','Overtime Pay Calculator','Time Duration Calculator','Business Days Calculator','Percent Change Calculator'].map((name,position)=>({
+        '@type':'ListItem',
+        position:position+1,
+        name,
+        url:`https://hustletimecalculator.com/#${['time-card','work-hours','overtime','duration','business-days','percent'][position]}`,
+     })),
+    },
+ ],
+};
+
 export default function Page(){
  return <main>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(structuredData)}} />
   <header className="site-header"><div className="wrap nav">
    <a className="brand" href="/" aria-label="Hustle Time Calculator home"><img src="/logo.svg" alt="Hustle Time Calculator" /></a>
    <nav><a href="#tools">Tools</a><a href="#how">How It Works</a><a href="#faq">FAQ</a></nav>

@@ -32,8 +32,8 @@ export default function CalculatorHub(){
  const durationResult=duration(aTime,bTime);
 
  return <div className="hub">
-  <div className="tool-tabs">{tools.map(([id,name,desc])=><button key={id} className={tool===id?'active':''} onClick={()=>setTool(id)}><b>{name}</b><small>{desc}</small></button>)}</div>
-  <div className="tool-card">
+    <div className="tool-tabs" role="tablist" aria-label="Calculator tools">{tools.map(([id,name,desc])=><button key={id} id={`${id}-tab`} type="button" role="tab" aria-selected={tool===id} aria-controls={`${id}-panel`} className={tool===id?'active':''} onClick={()=>setTool(id)}><b>{name}</b><small>{desc}</small></button>)}</div>
+  <div className="tool-card" id={`${tool}-panel`} role="tabpanel" aria-labelledby={`${tool}-tab`}>
    {tool==='time-card'&&<><h2>Time Card Calculator</h2><p className="tool-intro">Estimate a five-day workweek with breaks, overtime and pay.</p><div className="form-grid">
     <label>Start<input type="time" value={start} onChange={e=>setStart(e.target.value)}/></label>
     <label>End<input type="time" value={end} onChange={e=>setEnd(e.target.value)}/></label>
