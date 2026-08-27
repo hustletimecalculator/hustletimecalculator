@@ -1,6 +1,8 @@
 'use client';
 import {useMemo,useState} from 'react';
 
+export type CalculatorTool='time-card'|'work-hours'|'overtime'|'duration'|'business-days'|'percent';
+
 const tools=[
  ['time-card','Time Card','Weekly hours, breaks, overtime & pay'],
  ['work-hours','Work Hours','Hours between start and end times'],
@@ -16,8 +18,8 @@ function duration(a:string,b:string){const x=mins(a),y=mins(b);if(x===null||y===
 function daysBetween(a:string,b:string){if(!a||!b)return 0;const A=new Date(a+'T00:00:00'),B=new Date(b+'T00:00:00');return Math.round(Math.abs(B.getTime()-A.getTime())/86400000)}
 function businessDays(a:string,b:string){if(!a||!b)return 0;let A=new Date(a+'T00:00:00'),B=new Date(b+'T00:00:00');if(A>B)[A,B]=[B,A];let n=0;for(let d=new Date(A);d<=B;d.setDate(d.getDate()+1)){const w=d.getDay();if(w!==0&&w!==6)n++}return n}
 
-export default function CalculatorHub(){
- const [tool,setTool]=useState('time-card');
+export default function CalculatorHub({initialTool='time-card'}:{initialTool?:CalculatorTool}){
+ const [tool,setTool]=useState<CalculatorTool>(initialTool);
  const [start,setStart]=useState('08:00'),[end,setEnd]=useState('17:00'),[br,setBr]=useState('60'),[rate,setRate]=useState('25');
  const [threshold,setThreshold]=useState('40'),[mult,setMult]=useState('1.5');
  const [aDate,setADate]=useState(''),[bDate,setBDate]=useState('');
