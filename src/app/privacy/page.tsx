@@ -1,0 +1,1 @@
+export default function Page(){return <main className="wrap content" style={{paddingTop:60}}><a href="/">← Home</a><h1>Privacy Policy</h1><p>This starter page explains that time entries are processed locally in the browser. Before launch, replace it with a legally reviewed policy covering analytics, advertising cookies, retention and applicable law.</p></main>}
