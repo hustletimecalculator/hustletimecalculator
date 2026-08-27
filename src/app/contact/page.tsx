@@ -1,1 +1,0 @@
-export default function Page(){return <main className="wrap content" style={{paddingTop:60}}><a href="/">← Home</a><h1>Contact</h1><p>Add your business contact email and support details here before launch.</p></main>}

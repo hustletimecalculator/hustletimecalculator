@@ -3,7 +3,7 @@ import CalculatorHub from './calculator-hub';
 export default function Page(){
  return <main>
   <header className="site-header"><div className="wrap nav">
-   <a className="brand" href="/">◷ <span>Hustle Time Calculator</span></a>
+   <a className="brand" href="/" aria-label="Hustle Time Calculator home"><img src="/logo.svg" alt="Hustle Time Calculator" /></a>
    <nav><a href="#tools">Tools</a><a href="#how">How It Works</a><a href="#faq">FAQ</a></nav>
   </div></header>
   <section className="hero"><div className="wrap">
@@ -24,6 +24,6 @@ export default function Page(){
    <details><summary>Can I use the tools on my phone?</summary><p>Yes. The interface is responsive and works on modern mobile browsers.</p></details>
    <details><summary>Can I use the overtime calculator for payroll?</summary><p>It is an estimate. Payroll rules vary by employer and jurisdiction, so verify results before relying on them for official payroll.</p></details>
   </section>
-  <footer><div className="wrap footer"><div><b>◷ Hustle Time Calculator</b><p>Free time and pay tools for people who work.</p></div><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></div></div></footer>
+  <footer><div className="wrap footer"><div><b>◷ Hustle Time Calculator</b><p>Free time and pay tools for people who work.</p></div><div><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></footer>
  </main>
 }

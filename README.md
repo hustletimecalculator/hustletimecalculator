@@ -1,28 +1,31 @@
-# Hustle Time Calculator V6 — Cloudflare Workers Static Assets
+# Hustle Time Calculator
 
-Cloudflare Workers Builds-ready static Next.js site.
+Static Next.js website for Hustle Time Calculator, deployed to Cloudflare Workers with static assets.
 
-## Cloudflare settings
+## Included tools
+- Time Card
+- Work Hours
+- Overtime Pay
+- Time Duration
+- Business Days
+- Percent Change
 
-- Project name: `hustletimecalculator`
-- Build command: `npm run build`
-- Deploy command: `npx wrangler deploy`
+All calculators are available on the same main page and run in the browser.
 
-Keep `wrangler.jsonc` in the repository root.
+## Branding
+- `public/logo.svg` — Hustle Time Calculator wordmark/logo
+- `public/icon.svg` — browser/app icon
 
-## Static export
+## Contact page
+The Contact page has been removed from the site and from the sitemap.
 
-Next.js uses `output: 'export'` and generates the site in `out/`.
-The sitemap is a static `public/sitemap.xml`, which is compatible with static export.
+## Cloudflare deployment
+Build command:
+```bash
+npm run build
+```
 
-## Important
-
-Do not use OpenNext for this project.
-Do not use `opennextjs-cloudflare`.
-Do not remove `wrangler.jsonc`.
-
-## Local
-
-`npm install`
-`npm run build`
-`npx wrangler deploy`
+Deploy command:
+```bash
+npx wrangler deploy
+```
