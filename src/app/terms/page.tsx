@@ -1,0 +1,1 @@
+export default function Page(){return <main className="wrap content" style={{paddingTop:60}}><a href="/">← Home</a><h1>Terms of Use</h1><p>This calculator is informational. Verify calculations before relying on them for payroll, legal or financial decisions. Replace this starter text with legally reviewed terms before launch.</p></main>}
